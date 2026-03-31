@@ -26,6 +26,7 @@ Where:
 	5) Calculate magnitude spectrum using abs()
 	6) Plot the DFT using stem()
 	7)Stop the program
+	
 
 # MATLAB CODE :
 
