@@ -18,6 +18,7 @@ Where:
   X(k)→ frequency spectrum.
   N→ number of samples.
 
+
 # Algorithm :
 	1) Start the program
 	2) Define the discrete-time signal x(n)
