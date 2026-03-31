@@ -1,58 +1,68 @@
-# DIT–FAST FOURIER TRANSFORM (FFT) USING RADIX-2 ALGORITHM
-# AIM:
-To compute the Fast Fourier Transform (FFT) of a discrete-time signal using the Radix-2 Decimation-in-Time (DIT) algorithm using MATLAB.
-
-# APPARATUS REQUIRED :
+# COMPUTATION OF DISCRETE FOURIER TRANSFORM (DFT) OF A DISCRETE-TIME SIGNAL
+#  Aim :
+To compute and plot the Discrete Fourier Transform (DFT) of a given discrete-time signal using MATLAB.
+# Apparatus / Software Required:
 •	Computer / Laptop
 
 •	MATLAB software
-
 # Theory :
-The Fast Fourier Transform (FFT) is a fast method of computing the Discrete Fourier Transform (DFT).
-In the Radix-2 Decimation-in-Time (DIT) FFT:
-	The input signal is divided first (decimated in time)
-	The signal is split into even and odd indexed samples
-	Smaller DFTs are computed
-	Results are combined using butterfly operations
-The Radix-2 DIT FFT requires the number of samples to be a power of 2:
+A discrete-time signal may contain multiple frequency components.
+The Discrete Fourier Transform (DFT) converts a signal from the time domain into the frequency domain and shows the strength of each frequency present in the signal.
+MATLAB computes DFT efficiently using the Fast Fourier Transform (FFT) algorithm.
 
-N=2^m
+Mathematical Expression:
+X(k)=∑_(n=0)^(N-1)▒〖x(n)" " 〗 e^(-j2πkn/N)
 
-This method reduces the computational complexity from:
-
-DFT: N^2
-
-FFT: N〖log⁡〗_2 N
-
-Key Features of DIT-FFT :  
-1) Decimation is done in time domain .
-
-2) Input sequence is bit-reversed .
-  
-3) Output is in natural order  .
-  
-4) FFT is computed in log₂N stages.
+Where:
+	x(n)→ input signal.
+  X(k)→ frequency spectrum.
+  N→ number of samples.
 
 # Algorithm :
-1)Start the program
+	1) Start the program
+	2) Define the discrete-time signal x(n)
+	3) Find the length of the signal
+	4) Compute the DFT using fft()
+	5) Calculate magnitude spectrum using abs()
+	6) Plot the DFT using stem()
+	7)Stop the program
 
-2)Define a discrete-time signal of length N=2^m
+# MATLAB CODE :
+~~~
+% Computation of DFT of a Discrete-Time Signal
 
-3)Rearrange the input in bit-reversed order
+clc;
+clear;
+close all;
 
-4)Apply FFT using Radix-2 DIT method
+% Input discrete-time signal
+x = [1 1 1 1];
 
-5)Compute the magnitude spectrum
+% Length of the signal
+N = length(x);
 
-6)Plot the FFT output
+% Compute DFT using FFT
+X = fft(x);
 
-7)Stop the program
+% Display DFT values
+disp('DFT of the given signal is:');
+disp(X);
 
-# MATLAB CODE:
+% Frequency index
+k = 0:N-1;
 
+% Plot magnitude spectrum
+figure;
+stem(k, abs(X), 'filled');
+xlabel('Frequency index k');
+ylabel('|X(k)|');
+title('Magnitude Spectrum of DFT');
+grid on;
+~~~
 # OUTPUT GRAPH :
+<img width="690" height="470" alt="image" src="https://github.com/user-attachments/assets/a9606d7e-1129-4bc8-a415-3dff298a3299" />
 
-# RESULT:
-Thus, the Fast Fourier Transform of the given discrete-time signal was successfully computed using the Radix-2 Decimation-in-Time (DIT) FFT algorithm in MATLAB.
+# Result :
+Thus, the Discrete Fourier Transform of the given discrete-time signal was successfully computed and plotted using MATLAB.
 
 
